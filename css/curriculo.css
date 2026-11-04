@@ -1,0 +1,300 @@
+:root {
+  --cor: #2b2dbd;
+  --texto: #1a1c2e;
+  --suave: #555a78;
+  --linha: #d9dbe8;
+  --fonte: Arial, "Liberation Sans", Helvetica, sans-serif;
+  --tam: 9.6pt;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  background: #e9eaf2;
+  color: var(--texto);
+  font: 400 var(--tam) / 1.33 var(--fonte);
+}
+
+/* BARRA DE AÇÕES */
+
+.barra {
+  position: sticky;
+  top: 0;
+  z-index: 10;
+  display: flex;
+  gap: 10px;
+  justify-content: center;
+  padding: 12px;
+  background: #fff;
+  border-bottom: 1px solid var(--linha);
+}
+
+.barra button,
+.barra a {
+  font: 600 0.85rem var(--fonte);
+  padding: 8px 16px;
+  border-radius: 8px;
+  border: 1px solid var(--cor);
+  background: var(--cor);
+  color: #fff;
+  cursor: pointer;
+  text-decoration: none;
+}
+
+.barra a {
+  background: #fff;
+  color: var(--cor);
+}
+
+/* FOLHA */
+
+.folha {
+  width: 210mm;
+  min-height: 297mm;
+  margin: 20px auto;
+  padding: 14mm 15mm;
+  background: #fff;
+  box-shadow: 0 10px 40px -15px rgba(0, 0, 0, 0.35);
+}
+
+/* CABEÇALHO */
+
+.cabecalho {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 20px;
+}
+
+h1 {
+  margin: 0;
+  font-size: 21pt;
+  letter-spacing: -0.02em;
+  line-height: 1.1;
+}
+
+.cargo {
+  margin: 2px 0 6px;
+  font-size: 12pt;
+  font-weight: 600;
+  color: var(--cor);
+}
+
+/* CONTATO */
+
+.contato {
+  text-align: left;
+  font-size: 0.85rem;
+  line-height: 1.5;
+  margin: 8px 0 20px;
+}
+
+.contato p {
+  margin: 3px 0;
+}
+
+.contato a {
+  text-decoration: none;
+}
+
+.contato p:last-child a {
+  font-weight: 700;
+}
+
+/* SEÇÕES */
+
+section {
+  break-inside: auto;
+}
+
+h2 {
+  margin: 10px 0 5px;
+  padding-bottom: 3px;
+  border-bottom: 1.5px solid var(--cor);
+  font-size: 10.5pt;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  color: var(--cor);
+}
+
+p {
+  margin: 0 0 5px;
+}
+
+/* EXPERIÊNCIA E FORMAÇÃO */
+
+.item {
+  margin-bottom: 7px;
+  break-inside: avoid;
+  page-break-inside: avoid;
+}
+
+.topo {
+  display: flex;
+  justify-content: space-between;
+  gap: 12px;
+  align-items: baseline;
+}
+
+.topo b {
+  font-size: 10.2pt;
+}
+
+.data {
+  color: var(--suave);
+  font-size: 9pt;
+  white-space: nowrap;
+}
+
+ul {
+  margin: 3px 0 0;
+  padding-left: 16px;
+}
+
+li {
+  margin-bottom: 2px;
+}
+
+.sub {
+  color: var(--suave);
+}
+
+/* HABILIDADES */
+
+.skills {
+  display: grid;
+  grid-template-columns: 110px 1fr;
+  gap: 3px 10px;
+  margin: 5px 0;
+}
+
+.skills dt {
+  font-weight: 600;
+}
+
+.skills dd {
+  margin: 0;
+}
+
+/* CERTIFICADOS */
+
+.certificados {
+  margin-top: 4px;
+}
+
+/* PORTFÓLIO */
+
+.secao-portfolio {
+  margin-top: 12px;
+}
+
+.secao-portfolio p {
+  margin-bottom: 4px;
+}
+
+.secao-portfolio a {
+  font-weight: 700;
+  text-decoration: none;
+}
+
+/* LINKS */
+
+a {
+  color: var(--cor);
+}
+
+/* RESPONSIVIDADE */
+
+@media screen and (max-width: 800px) {
+  .folha {
+    width: calc(100% - 24px);
+    min-height: auto;
+    margin: 12px auto;
+    padding: 24px;
+  }
+
+  .cabecalho {
+    align-items: flex-start;
+  }
+}
+
+@media screen and (max-width: 520px) {
+  .folha {
+    padding: 20px 16px;
+  }
+
+  .cabecalho {
+    flex-direction: column;
+    gap: 4px;
+  }
+
+  .contato {
+    overflow-wrap: anywhere;
+  }
+
+  .topo {
+    flex-direction: column;
+    gap: 2px;
+  }
+
+  .data {
+    white-space: normal;
+  }
+
+  .skills {
+    grid-template-columns: 1fr;
+    gap: 1px;
+  }
+
+  .skills dd {
+    margin-bottom: 5px;
+  }
+
+  .barra {
+    flex-wrap: wrap;
+  }
+}
+
+/* IMPRESSÃO */
+
+@page {
+  size: A4;
+  margin: 0;
+}
+
+@media print {
+  body {
+    background: #fff;
+  }
+
+  .barra {
+    display: none;
+  }
+
+  .folha {
+    width: 210mm;
+    min-height: 0;
+    margin: 0;
+    padding: 9mm 14mm;
+    box-shadow: none;
+  }
+
+  a {
+    color: var(--texto);
+    text-decoration: none;
+  }
+
+  .contato p:last-child a,
+  .secao-portfolio a {
+    color: #000;
+    text-decoration: underline;
+  }
+
+  * {
+    -webkit-print-color-adjust: exact;
+    print-color-adjust: exact;
+  }
+}

@@ -1,21 +1,139 @@
-.hero{padding-top:64px}
-.role{font:500 .9rem var(--mono);color:var(--ac);margin-bottom:14px}
-.con{background:var(--sf);border:1px solid var(--ln);border-radius:14px;overflow:hidden;box-shadow:0 24px 60px -30px color-mix(in srgb,var(--ac) 45%,transparent)}
-.tabs{display:flex;gap:4px;padding:10px 10px 0;overflow-x:auto}
-.tabs button{flex:none;background:none;border:1px solid transparent;border-radius:8px;color:var(--mu);font:500 .82rem var(--mono);padding:5px 11px;cursor:pointer}
-.tabs button:hover{color:var(--tx)}.tabs button[aria-selected=true]{background:var(--sf2);color:var(--tx);border-color:var(--ln)}
-pre{margin:0;padding:16px 18px 22px;font:400 .84rem/1.75 var(--mono);min-height:400px;white-space:pre-wrap;word-break:break-word;color:var(--mu)}
-pre a{color:var(--ac);text-underline-offset:3px}
-.k{color:var(--ac)}.s{color:var(--ok)}
-.hg{display:grid;grid-template-columns:1.05fr .95fr;gap:clamp(32px,5vw,72px);align-items:center}@media(max-width:900px){.hg{grid-template-columns:1fr;gap:32px}}
-.hero .row{margin-bottom:0}
-.hero pre{height:310px;min-height:0;overflow:auto;overscroll-behavior:contain;scrollbar-width:thin;scrollbar-color:var(--ln) transparent;font-size:.8rem;padding:14px 16px 18px}
-/* Foto + nome */
-.id{display:flex;align-items:center;gap:clamp(18px,3vw,30px);margin-bottom:22px}
-.id>div{flex:1;min-width:0;container-type:inline-size}
-.id .role{margin:0 0 6px}
-.id h1{margin:0;white-space:nowrap;font-size:clamp(1.6rem,4vw,3.2rem);font-size:min(3.4rem,9.6cqi)}
-.now{margin:10px 0 0;display:flex;align-items:center;gap:9px;font:500 .78rem var(--mono);color:var(--mu)}
-.now span{width:7px;height:7px;border-radius:50%;background:var(--ok);box-shadow:0 0 0 4px color-mix(in srgb,var(--ok) 25%,transparent)}
-.avatar{position:relative;flex:none;margin:0;width:clamp(96px,11vw,136px);aspect-ratio:1;padding:4px;border-radius:50%;background:conic-gradient(from 140deg,var(--ac),var(--ok),var(--ac));box-shadow:0 22px 50px -22px color-mix(in srgb,var(--ac) 75%,transparent)}
-.avatar img{display:block;width:100%;height:100%;object-fit:cover;border-radius:50%;border:4px solid var(--bg);background:var(--sf)}
+.hero {
+  padding-top: 64px;
+}
+.role {
+  font: 500 0.9rem var(--mono);
+  color: var(--ac);
+  margin-bottom: 14px;
+}
+.con {
+  background: var(--sf);
+  border: 1px solid var(--ln);
+  border-radius: 14px;
+  overflow: hidden;
+  box-shadow: 0 24px 60px -30px color-mix(in srgb, var(--ac) 45%, transparent);
+}
+.tabs {
+  display: flex;
+  gap: 4px;
+  padding: 10px 10px 0;
+  overflow-x: auto;
+}
+.tabs button {
+  flex: none;
+  background: none;
+  border: 1px solid transparent;
+  border-radius: 8px;
+  color: var(--mu);
+  font: 500 0.82rem var(--mono);
+  padding: 5px 11px;
+  cursor: pointer;
+}
+.tabs button:hover {
+  color: var(--tx);
+}
+.tabs button[aria-selected="true"] {
+  background: var(--sf2);
+  color: var(--tx);
+  border-color: var(--ln);
+}
+pre {
+  margin: 0;
+  padding: 16px 18px 22px;
+  font: 400 0.84rem/1.75 var(--mono);
+  min-height: 400px;
+  white-space: pre-wrap;
+  word-break: break-word;
+  color: var(--mu);
+}
+pre a {
+  color: var(--ac);
+  text-underline-offset: 3px;
+}
+.k {
+  color: var(--ac);
+}
+.s {
+  color: var(--ok);
+}
+.hg {
+  display: grid;
+  grid-template-columns: 1.05fr 0.95fr;
+  gap: clamp(32px, 5vw, 72px);
+  align-items: center;
+}
+@media (max-width: 900px) {
+  .hg {
+    grid-template-columns: 1fr;
+    gap: 32px;
+  }
+}
+.hero .row {
+  margin-bottom: 0;
+}
+.hero pre {
+  height: 310px;
+  min-height: 0;
+  overflow: auto;
+  overscroll-behavior: contain;
+  scrollbar-width: thin;
+  scrollbar-color: var(--ln) transparent;
+  font-size: 0.8rem;
+  padding: 14px 16px 18px;
+}
+
+.id {
+  display: flex;
+  align-items: center;
+  gap: clamp(18px, 3vw, 30px);
+  margin-bottom: 22px;
+}
+.id > div {
+  flex: 1;
+  min-width: 0;
+  container-type: inline-size;
+}
+.id .role {
+  margin: 0 0 6px;
+}
+.id h1 {
+  margin: 0;
+  white-space: nowrap;
+  font-size: clamp(1.6rem, 4vw, 3.2rem);
+  font-size: min(3.4rem, 9.6cqi);
+}
+.now {
+  margin: 10px 0 0;
+  display: flex;
+  align-items: center;
+  gap: 9px;
+  font: 500 0.78rem var(--mono);
+  color: var(--mu);
+}
+.now span {
+  width: 7px;
+  height: 7px;
+  border-radius: 50%;
+  background: var(--ok);
+  box-shadow: 0 0 0 4px color-mix(in srgb, var(--ok) 25%, transparent);
+}
+.avatar {
+  position: relative;
+  flex: none;
+  margin: 0;
+  width: clamp(96px, 11vw, 136px);
+  aspect-ratio: 1;
+  padding: 4px;
+  border-radius: 50%;
+  background: conic-gradient(from 140deg, var(--ac), var(--ok), var(--ac));
+  box-shadow: 0 22px 50px -22px color-mix(in srgb, var(--ac) 75%, transparent);
+}
+.avatar img {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  border-radius: 50%;
+  border: 4px solid var(--bg);
+  background: var(--sf);
+}

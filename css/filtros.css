@@ -1,0 +1,96 @@
+.fbar {
+  position: relative;
+  display: grid;
+  gap: 12px;
+  max-width: 880px;
+  margin: 26px auto 0;
+  padding: 16px 18px;
+  background: var(--sf);
+  border: 1px solid var(--ln);
+  border-radius: 16px;
+  text-align: left;
+}
+.fbar .flt {
+  margin: 0;
+  justify-content: flex-start;
+  flex-wrap: wrap;
+  gap: 8px;
+}
+.fbar .flt + .flt {
+  margin-top: 0;
+}
+.fbar .flt::before {
+  min-width: 52px;
+  text-align: left;
+}
+.fbar .flt button {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 5px 8px 5px 14px;
+  background: var(--bg);
+  transition:
+    border-color 0.15s,
+    color 0.15s,
+    background 0.15s,
+    opacity 0.15s;
+}
+.fbar .flt button[aria-pressed="true"] {
+  background: var(--ac);
+  border-color: var(--ac);
+  color: #0c0e1a;
+}
+.fbar .flt button em {
+  font: 500 0.66rem var(--mono);
+  font-style: normal;
+  min-width: 20px;
+  padding: 1px 6px;
+  border-radius: 999px;
+  background: var(--sf2);
+  color: var(--mu);
+  text-align: center;
+}
+.fbar .flt button[aria-pressed="true"] em {
+  background: rgba(12, 14, 26, 0.22);
+  color: #0c0e1a;
+}
+.fbar .flt button:disabled {
+  opacity: 0.35;
+  cursor: not-allowed;
+}
+.fbar .flt button:disabled:hover {
+  color: var(--mu);
+  border-color: var(--ln);
+}
+.fclear {
+  justify-self: end;
+  background: none;
+  border: 0;
+  padding: 0;
+  color: var(--ac);
+  font: 500 0.74rem var(--mono);
+  text-decoration: underline;
+  text-underline-offset: 3px;
+  cursor: pointer;
+}
+@media (max-width: 640px) {
+  .fbar {
+    padding: 14px;
+    margin-top: 20px;
+  }
+  .fbar .flt {
+    flex-wrap: nowrap;
+    overflow-x: auto;
+    scrollbar-width: none;
+    padding-bottom: 2px;
+  }
+  .fbar .flt::-webkit-scrollbar {
+    display: none;
+  }
+  .fbar .flt::before {
+    display: none;
+  }
+  .fbar .flt button {
+    flex: none;
+  }
+}

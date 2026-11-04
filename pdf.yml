@@ -1,0 +1,45 @@
+# Gera o PDF do currículo sozinho sempre que você editar o HTML/CSS dele.
+# Você edita curriculo.html -> faz push -> este workflow atualiza assets/curriculo-thayron.pdf.
+name: Gerar PDF do currículo
+
+on:
+  push:
+    branches: [main, master]
+    paths:
+      - "curriculo.html"
+      - "css/curriculo.css"
+      - "gerar-pdf.py"
+  workflow_dispatch: # permite rodar à mão na aba Actions
+
+permissions:
+  contents: write # necessário para o bot commitar o PDF
+
+jobs:
+  pdf:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+
+      - name: Instalar Playwright e Chromium
+        run: |
+          pip install playwright
+          playwright install --with-deps chromium
+
+      - name: Gerar PDF
+        run: python gerar-pdf.py
+
+      - name: Commitar o PDF, se mudou
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add assets/curriculo-thayron.pdf
+          if git diff --staged --quiet; then
+            echo "PDF sem mudanças."
+          else
+            git commit -m "chore: atualiza PDF do currículo"
+            git push
+          fi
