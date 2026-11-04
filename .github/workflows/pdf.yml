@@ -8,7 +8,7 @@ on:
     paths:
       - "curriculo.html"
       - "css/curriculo.css"
-      - "gerar-pdf.py"
+      - "scripts/gerar-pdf.py"
   workflow_dispatch: # permite rodar à mão na aba Actions
 
 permissions:
@@ -30,7 +30,7 @@ jobs:
           playwright install --with-deps chromium
 
       - name: Gerar PDF
-        run: python gerar-pdf.py
+        run: python scripts/gerar-pdf.py
 
       - name: Commitar o PDF, se mudou
         run: |

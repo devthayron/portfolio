@@ -4,7 +4,7 @@ from pathlib import Path
 
 from playwright.sync_api import sync_playwright
 
-raiz = Path(__file__).parent
+raiz = Path(__file__).parent.parent
 saida = raiz / "assets" / "curriculo-thayron.pdf"
 saida.parent.mkdir(exist_ok=True)
 

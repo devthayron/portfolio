@@ -1,4 +1,3 @@
-/* Paleta de comandos (Ctrl/Cmd + K) */
 const pal = $("pal"),
   pi = $("pi"),
   pl = $("pl");
@@ -8,7 +7,7 @@ const cmds = [
   ["Projetos", "#projetos", "seção"],
   ["Contato", "#contato", "seção"],
   ["GitHub", "https://github.com/devthayron", "link"],
-  ["LinkedIn", "https://www.linkedin.com/in/thayronhiglander", "link"],
+  ["LinkedIn", "https://www.linkedin.com/in/thayron-higlander", "link"],
   ["WhatsApp", "https://wa.me/5599988040698", "link"],
   ["Baixar currículo (PDF)", "assets/curriculo-thayron.pdf", "link"],
   ["Alternar tema", "theme", "ação"],

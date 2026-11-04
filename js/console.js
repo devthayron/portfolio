@@ -33,7 +33,7 @@ const E = {
   ],
   "/contact": [
     "{",
-    '  "email": "[devthayronhiglander@gmail.com](mailto:devthayronhiglander@gmail.com)",',
+    '  "email": "[thayronsantos8@gmail.com](mailto:thayronsantos8@gmail.com)",',
     '  "linkedin": "[linkedin.com/in/thayron-higlander](https://www.linkedin.com/in/thayron-higlander)",',
     '  "github": "[github.com/devthayron](https://github.com/devthayron)"',
     "}",

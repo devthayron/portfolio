@@ -111,7 +111,7 @@ section {
 }
 
 h2 {
-  margin: 10px 0 5px;
+  margin: 12px 0 5px;
   padding-bottom: 3px;
   border-bottom: 1.5px solid var(--cor);
   font-size: 10.5pt;
@@ -127,7 +127,7 @@ p {
 /* EXPERIÊNCIA E FORMAÇÃO */
 
 .item {
-  margin-bottom: 7px;
+  margin-bottom: 8px;
   break-inside: avoid;
   page-break-inside: avoid;
 }
@@ -288,7 +288,8 @@ a {
   }
 
   .contato p:last-child a,
-  .secao-portfolio a {
+  .secao-portfolio a,
+  .titulo-projeto {
     color: #000;
     text-decoration: underline;
   }
