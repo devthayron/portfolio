@@ -43,8 +43,8 @@
     <link rel="stylesheet" href="css/timeline.css" />
     <link rel="stylesheet" href="css/projects.css" />
     <link rel="stylesheet" href="css/filtros.css" />
-    <link rel="stylesheet" href="css/palette.css" />
     <link rel="stylesheet" href="css/whatsapp.css" />
+    <link rel="stylesheet" href="css/mobile.css" />
   </head>
 
   <body>
@@ -100,7 +100,6 @@
               <figure class="avatar">
                 <img
                   src="assets/perfil.png"
-                  data-fallback="assets/foto-placeholder.svg"
                   alt="Foto de Thayron Higlander"
                   width="132"
                   height="132"
@@ -212,7 +211,7 @@
 
             <div class="stats">
               <div class="stat">
-                <b>5+</b>
+                <b id="anos-empresa">5+</b>
                 <span>anos na empresa</span>
               </div>
 
@@ -263,9 +262,9 @@
                   </header>
 
                   <p class="mu">
-                    Dashboards e relatórios interativos em Power BI para
-                    acompanhar indicadores e apoiar decisões. Primeiras
-                    automações em Python e Django:
+                    Dashboards em Power BI para acompanhar indicadores e apoiar
+                    decisões, além do desenvolvimento de aplicações internas com
+                    Python e Django.
                   </p>
 
                   <ul class="sub">
@@ -311,7 +310,6 @@
       <section id="projetos" class="pj">
         <div class="w">
           <h2>Projetos</h2>
-
           <div class="fbar">
             <div
               class="flt"
@@ -321,16 +319,28 @@
               aria-label="Filtrar por área"
             ></div>
 
-            <div
-              class="flt"
-              id="fs"
-              data-label="Stack"
-              role="group"
-              aria-label="Filtrar por stack"
-            ></div>
-
-            <button class="fclear" id="fc" type="button" hidden>
-              Limpar filtros
+            <button
+              class="fclear"
+              id="fc"
+              type="button"
+              aria-label="Limpar filtros"
+              title="Limpar filtros"
+              hidden
+            >
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                width="17"
+                height="17"
+                viewBox="0 0 24 24"
+                fill="none"
+                stroke="currentColor"
+                stroke-width="1.8"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+              >
+                <path d="M4 4h16l-6.5 7.5v6l-3 2v-8L4 4z" />
+                <path d="m17 17 4 4m0-4-4 4" />
+              </svg>
             </button>
           </div>
 
@@ -600,23 +610,10 @@
       <span>WhatsApp</span>
     </a>
 
-    <!-- MENU DE COMANDOS -->
-    <dialog class="pal" id="pal" aria-label="Menu de comandos">
-      <input
-        id="pi"
-        placeholder="Ir para…"
-        aria-label="Buscar comando"
-        autocomplete="off"
-      />
-
-      <ul id="pl" role="listbox"></ul>
-    </dialog>
-
     <!-- SCRIPTS -->
     <script src="js/utils.js"></script>
     <script src="js/console.js"></script>
     <script src="js/theme.js"></script>
-    <script src="js/palette.js"></script>
     <script src="js/projects.js"></script>
     <script src="js/timeline.js"></script>
   </body>

@@ -1,19 +1,104 @@
-/* WhatsApp flutuante: círculo perfeito, rótulo aparece ao lado no hover */
-.wa{position:fixed;right:max(20px,env(safe-area-inset-right));bottom:max(20px,env(safe-area-inset-bottom));z-index:20;display:grid;place-items:center;width:60px;height:60px;border-radius:50%;background:#25d366;color:#fff;text-decoration:none;box-shadow:0 10px 26px -8px rgba(37,211,102,.75),0 2px 6px rgba(0,0,0,.25);transition:transform .2s,box-shadow .2s}
-.wa:hover{transform:translateY(-3px) scale(1.05);box-shadow:0 16px 32px -8px rgba(37,211,102,.9),0 2px 6px rgba(0,0,0,.25)}
-.wa svg{display:block;width:32px;height:32px;fill:currentColor}
-.wa span{position:absolute;right:calc(100% + 12px);top:50%;transform:translate(6px,-50%);padding:6px 12px;border-radius:8px;background:var(--sf2);color:var(--tx);border:1px solid var(--ln);font:500 .8rem var(--mono);white-space:nowrap;opacity:0;pointer-events:none;transition:opacity .2s,transform .2s}
-.wa:hover span,.wa:focus-visible span{opacity:1;transform:translate(0,-50%)}
-@media(max-width:640px){.wa{width:56px;height:56px}.wa span{display:none}}
-@media print{.wa{display:none}}
+.wa {
+  position: fixed;
+  right: max(20px, env(safe-area-inset-right));
+  bottom: max(20px, env(safe-area-inset-bottom));
+  z-index: 20;
+  display: grid;
+  place-items: center;
+  width: 60px;
+  height: 60px;
+  border-radius: 50%;
+  background: #25d366;
+  color: #fff;
+  text-decoration: none;
+  box-shadow:
+    0 10px 26px -8px rgba(37, 211, 102, 0.75),
+    0 2px 6px rgba(0, 0, 0, 0.25);
+  transition:
+    transform 0.2s,
+    box-shadow 0.2s;
+}
+.wa:hover {
+  transform: translateY(-3px) scale(1.05);
+  box-shadow:
+    0 16px 32px -8px rgba(37, 211, 102, 0.9),
+    0 2px 6px rgba(0, 0, 0, 0.25);
+}
+.wa svg {
+  display: block;
+  width: 32px;
+  height: 32px;
+  fill: currentColor;
+}
+.wa span {
+  position: absolute;
+  right: calc(100% + 12px);
+  top: 50%;
+  transform: translate(6px, -50%);
+  padding: 6px 12px;
+  border-radius: 8px;
+  background: var(--sf2);
+  color: var(--tx);
+  border: 1px solid var(--ln);
+  font: 500 0.8rem var(--mono);
+  white-space: nowrap;
+  opacity: 0;
+  pointer-events: none;
+  transition:
+    opacity 0.2s,
+    transform 0.2s;
+}
+.wa:hover span,
+.wa:focus-visible span {
+  opacity: 1;
+  transform: translate(0, -50%);
+}
+@media (max-width: 640px) {
+  .wa {
+    width: 56px;
+    height: 56px;
+  }
+  .wa span {
+    display: none;
+  }
+}
+@media print {
+  .wa {
+    display: none;
+  }
+}
 
-/* Botão "Currículo" na navbar (sempre visível, inclusive no celular) */
-a.ib{display:inline-flex;align-items:center;gap:7px;text-decoration:none}
-.dl-nav{border-color:var(--ac)}
-.dl-nav svg{width:15px;height:15px;color:var(--ac);transition:transform .2s}
-.dl-nav:hover svg{transform:translateY(2px)}
+a.ib {
+  display: inline-flex;
+  align-items: center;
+  gap: 7px;
+  text-decoration: none;
+}
+.dl-nav {
+  border-color: var(--ac);
+}
+.dl-nav svg {
+  width: 15px;
+  height: 15px;
+  color: var(--ac);
+  transition: transform 0.2s;
+}
+.dl-nav:hover svg {
+  transform: translateY(2px);
+}
 
-/* Botão "Baixar currículo" (hero e contato) */
-.b.dl{display:inline-flex;align-items:center;gap:9px;border-color:var(--ac)}
-.b.dl svg{width:16px;height:16px;color:var(--ac);transition:transform .2s}
-.b.dl:hover svg{transform:translateY(2px)}
+.b.dl {
+  display: inline-flex;
+  align-items: center;
+  gap: 9px;
+  border-color: var(--ac);
+}
+.b.dl svg {
+  width: 16px;
+  height: 16px;
+  color: var(--ac);
+  transition: transform 0.2s;
+}
+.b.dl:hover svg {
+  transform: translateY(2px);
+}

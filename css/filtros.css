@@ -1,45 +1,48 @@
+/* Bloco de filtros */
 .fbar {
   position: relative;
   display: grid;
   gap: 12px;
-  max-width: 880px;
+  max-width: 900px;
   margin: 26px auto 0;
   padding: 16px 18px;
+  padding-right: 58px;
   background: var(--sf);
   border: 1px solid var(--ln);
   border-radius: 16px;
   text-align: left;
 }
+
 .fbar .flt {
+  position: relative;
   margin: 0;
-  justify-content: flex-start;
+  justify-content: center;
   flex-wrap: wrap;
   gap: 8px;
+  padding-left: 60px;
+  padding-right: 0;
 }
+
 .fbar .flt + .flt {
   margin-top: 0;
 }
+
 .fbar .flt::before {
-  min-width: 52px;
+  position: absolute;
+  left: 0;
+  top: 50%;
+  transform: translateY(-50%);
+  min-width: 0;
   text-align: left;
+  margin: 0;
 }
-.fbar .flt button {
-  display: inline-flex;
-  align-items: center;
-  gap: 8px;
-  padding: 5px 8px 5px 14px;
-  background: var(--bg);
-  transition:
-    border-color 0.15s,
-    color 0.15s,
-    background 0.15s,
-    opacity 0.15s;
-}
+
 .fbar .flt button[aria-pressed="true"] {
   background: var(--ac);
   border-color: var(--ac);
   color: #0c0e1a;
 }
+
 .fbar .flt button em {
   font: 500 0.66rem var(--mono);
   font-style: normal;
@@ -50,47 +53,84 @@
   color: var(--mu);
   text-align: center;
 }
+
 .fbar .flt button[aria-pressed="true"] em {
   background: rgba(12, 14, 26, 0.22);
   color: #0c0e1a;
 }
+
 .fbar .flt button:disabled {
   opacity: 0.35;
   cursor: not-allowed;
 }
+
 .fbar .flt button:disabled:hover {
   color: var(--mu);
   border-color: var(--ln);
 }
+
+/* Botão limpar filtros */
 .fclear {
-  justify-self: end;
-  background: none;
-  border: 0;
+  position: absolute;
+  top: 14px;
+  right: 14px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 32px;
+  height: 32px;
   padding: 0;
-  color: var(--ac);
-  font: 500 0.74rem var(--mono);
-  text-decoration: underline;
-  text-underline-offset: 3px;
+  background: var(--bg);
+  border: 1px solid var(--ln);
+  border-radius: 9px;
+  color: var(--mu);
+  font-size: 15px;
   cursor: pointer;
+  transition: all 0.2s ease;
 }
+
+.fclear:hover {
+  color: var(--ac);
+  border-color: var(--ac);
+  background: var(--sf2);
+}
+
+.fclear[hidden] {
+  display: none;
+}
+
+/* Responsividade */
 @media (max-width: 640px) {
   .fbar {
     padding: 14px;
+    padding-right: 52px;
     margin-top: 20px;
   }
+
   .fbar .flt {
+    justify-content: flex-start !important;
+    text-align: left;
+    margin-left: 0;
+    padding-left: 0;
     flex-wrap: nowrap;
     overflow-x: auto;
     scrollbar-width: none;
-    padding-bottom: 2px;
   }
-  .fbar .flt::-webkit-scrollbar {
-    display: none;
-  }
+
   .fbar .flt::before {
     display: none;
   }
+
   .fbar .flt button {
     flex: none;
+  }
+
+  .fbar .flt::-webkit-scrollbar {
+    display: none;
+  }
+
+  .fclear {
+    top: 12px;
+    right: 10px;
   }
 }

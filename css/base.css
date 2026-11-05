@@ -172,22 +172,8 @@ p {
   transform: translateY(-1px);
   border-color: var(--ac);
 }
-kbd {
-  font: 500 0.75rem var(--mono);
-  border: 1px solid var(--ln);
-  border-bottom-width: 2px;
-  border-radius: 5px;
-  padding: 1px 6px;
-  background: var(--sf);
-}
 section {
   padding: 96px 0 0;
-}
-.card {
-  background: var(--sf);
-  border: 1px solid var(--ln);
-  border-radius: 14px;
-  padding: 22px;
 }
 .chips {
   list-style: none;
@@ -212,15 +198,6 @@ section {
   height: 6px;
   border-radius: 50%;
   background: var(--ok);
-}
-.chips li.d {
-  color: var(--mu);
-  background: none;
-  border: 1px dashed var(--ln);
-}
-.chips li.d::before {
-  background: none;
-  border: 1.5px solid var(--mu);
 }
 [hidden] {
   display: none !important;

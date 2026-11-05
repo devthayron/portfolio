@@ -1,5 +1,3 @@
-# Gera o PDF do currículo sozinho sempre que você editar o HTML/CSS dele.
-# Você edita curriculo.html -> faz push -> este workflow atualiza assets/curriculo-thayron.pdf.
 name: Gerar PDF do currículo
 
 on:
@@ -8,11 +6,11 @@ on:
     paths:
       - "curriculo.html"
       - "css/curriculo.css"
-      - "scripts/gerar-pdf.py"
-  workflow_dispatch: # permite rodar à mão na aba Actions
+      - "scripts/gerar_curriculo.py"
+  workflow_dispatch:
 
 permissions:
-  contents: write # necessário para o bot commitar o PDF
+  contents: write
 
 jobs:
   pdf:

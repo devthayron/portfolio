@@ -49,6 +49,13 @@ const color = (l) =>
     .replace(/^(\s*)"([a-z]+)":/, '$1<span class="k">"$2"</span>:')
     .replace(/: "([^"<]*)"/, ': <span class="s">"$1"</span>')
     .replace(/^(\s+)"([^"<][^"]*)"(,?)$/, '$1<span class="s">"$2"</span>$3');
+
+const row = (l) => {
+  const n = l.match(/^ */)[0].length + 2;
+  return `<div style="padding-left:${n}ch;text-indent:-${n}ch">${color(l)}</div>`;
+};
+
+const phone = matchMedia("(max-width: 640px)");
 const tabs = document.querySelector(".tabs"),
   out = $("out");
 let timer;
@@ -57,17 +64,18 @@ function show(ep) {
   tabs
     .querySelectorAll("button")
     .forEach((b) => b.setAttribute("aria-selected", b.dataset.ep === ep));
-  const lines = E[ep].map(color);
+  const rows = E[ep].map(row);
   out.innerHTML = "";
   out.scrollTop = 0;
-  if (reduce) {
-    out.innerHTML = lines.join("\n");
+
+  if (reduce || phone.matches) {
+    out.innerHTML = rows.join("");
     return;
   }
   let i = 0;
   (function next() {
-    if (i < lines.length) {
-      out.innerHTML += (i ? "\n" : "") + lines[i++];
+    if (i < rows.length) {
+      out.innerHTML += rows[i++];
       timer = setTimeout(next, 45);
     }
   })();

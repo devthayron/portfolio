@@ -1,0 +1,322 @@
+/* =====================================================
+   RESPONSIVIDADE — TABLET E CELULAR
+   Carregar por último, depois de whatsapp.css
+   ===================================================== */
+
+html {
+  -webkit-text-size-adjust: 100%;
+  text-size-adjust: 100%;
+  scroll-padding-top: 68px;
+}
+
+/* Evita rolagem horizontal indesejada */
+body {
+  overflow-x: hidden;
+}
+
+/* Elementos não ultrapassam seus containers */
+img,
+pre,
+.cd,
+.info {
+  max-width: 100%;
+  box-sizing: border-box;
+}
+
+/* Telas de toque: evita hover preso após o toque */
+@media (hover: none) {
+  .b:hover,
+  .lks a:hover,
+  .cd:hover,
+  .wa:hover {
+    transform: none;
+  }
+}
+
+/* =====================================================
+   TABLETS E DISPOSITIVOS MENORES
+   ===================================================== */
+
+@media (max-width: 900px) {
+  body {
+    background-attachment: scroll;
+  }
+
+  section {
+    padding-top: 72px;
+  }
+
+  .stage::before {
+    filter: blur(30px);
+  }
+}
+
+/* =====================================================
+   CELULARES
+   ===================================================== */
+
+@media (max-width: 640px) {
+  /* Estrutura geral */
+  html {
+    scroll-padding-top: 68px;
+  }
+
+  body {
+    overflow-x: hidden;
+  }
+
+  section {
+    padding-top: 64px;
+  }
+
+  .big {
+    font-size: 1.35rem;
+  }
+  #trajetoria aside .big {
+    text-align: center;
+  }
+
+  .w {
+    width: calc(100% - 32px);
+    max-width: 100%;
+    box-sizing: border-box;
+  }
+
+  /* Hero */
+  .hero {
+    padding-top: 36px;
+  }
+
+  .id {
+    gap: 16px;
+    flex-wrap: wrap;
+  }
+
+  .avatar {
+    width: 88px;
+    max-width: 100%;
+  }
+
+  /* Navbar */
+  header .w {
+    height: 56px;
+  }
+
+  nav {
+    gap: 8px;
+    max-width: 100%;
+    overflow-x: auto;
+    scrollbar-width: none;
+  }
+
+  nav::-webkit-scrollbar {
+    display: none;
+  }
+
+  .ib {
+    min-height: 40px;
+    padding: 0 12px;
+    flex: 0 0 auto;
+    white-space: nowrap;
+  }
+
+  /* Console: abas em uma única linha */
+  .tabs {
+    display: flex;
+    flex-wrap: nowrap;
+    overflow-x: auto;
+    overflow-y: hidden;
+    gap: 8px;
+    max-width: 100%;
+    padding-bottom: 8px;
+    scrollbar-width: none;
+  }
+
+  .tabs::-webkit-scrollbar {
+    display: none;
+  }
+
+  .tabs button {
+    flex: 0 0 auto;
+    padding: 8px 12px;
+    white-space: nowrap;
+  }
+
+  /* Console: JSON adaptável à tela */
+  .hero pre {
+    width: 100%;
+    max-width: 100%;
+    height: auto;
+    min-height: 0;
+    overflow: visible;
+    box-sizing: border-box;
+    white-space: pre-wrap;
+    overflow-wrap: anywhere;
+    word-break: break-word;
+    font-size: 0.76rem;
+    line-height: 1.65;
+    padding: 14px;
+  }
+
+  /* Botões */
+  .row {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 10px;
+  }
+
+  .row .b {
+    min-width: 0;
+    text-align: center;
+    justify-content: center;
+    padding: 12px 10px;
+    overflow-wrap: anywhere;
+  }
+
+  .row .b.pr,
+  .row .b.dl {
+    grid-column: 1 / -1;
+  }
+
+  /* Trajetória */
+  #trajetoria aside h2 {
+    display: block;
+    width: 100%;
+    text-align: center !important;
+    transform: translateY(-20px);
+  }
+  #contato h2 {
+    text-align: center;
+  }
+  .st {
+    padding-left: 36px;
+  }
+
+  .st::after {
+    width: 20px;
+  }
+
+  .cd {
+    padding: 16px;
+    min-width: 0;
+  }
+
+  .cd h3 {
+    font-size: 1.05rem;
+    overflow-wrap: anywhere;
+  }
+
+  .sub li {
+    padding: 10px 12px;
+    font-size: 0.88rem;
+  }
+
+  /* Indicadores */
+  .stats {
+    gap: 10px;
+    flex-wrap: wrap;
+  }
+
+  .stat {
+    flex: 1 1 100px;
+    min-width: 0;
+    overflow-wrap: anywhere;
+  }
+
+  /* Projetos */
+  .srch {
+    width: 100%;
+    max-width: 100%;
+    box-sizing: border-box;
+    font-size: 16px;
+    padding: 11px 14px;
+  }
+
+  .fbar {
+    max-width: 100%;
+  }
+
+  .fbar .flt {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+  }
+
+  .fbar .flt button {
+    min-height: 36px;
+    padding: 4px 12px;
+  }
+
+  .pt {
+    min-width: 0;
+    max-width: 100%;
+    padding: 10px 12px;
+    box-sizing: border-box;
+  }
+
+  /* Informações e links */
+  .info {
+    padding-top: 20px;
+    min-width: 0;
+  }
+
+  .lks {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+  }
+
+  .lks a {
+    flex: 1 1 auto;
+    min-width: 0;
+    text-align: center;
+    padding: 12px 14px;
+    overflow-wrap: anywhere;
+  }
+
+  /* Rodapé */
+  footer {
+    padding: 56px 0 96px;
+    text-align: center;
+  }
+
+  footer .w {
+    justify-content: center;
+  }
+}
+
+/* =====================================================
+   CELULARES PEQUENOS
+   ===================================================== */
+
+@media (max-width: 380px) {
+  .w {
+    width: calc(100% - 24px);
+  }
+
+  .avatar {
+    width: 76px;
+  }
+
+  .stats {
+    gap: 8px;
+  }
+
+  .hero pre {
+    font-size: 0.72rem;
+    padding: 12px;
+  }
+
+  .cd {
+    padding: 14px;
+  }
+
+  .row {
+    gap: 8px;
+  }
+
+  .row .b {
+    padding: 11px 8px;
+    font-size: 0.88rem;
+  }
+}

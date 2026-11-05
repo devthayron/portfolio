@@ -24,3 +24,18 @@
   addEventListener("resize", tick);
   upd();
 })();
+const inicioEmpresa = new Date(2021, 6, 1);
+const hoje = new Date();
+
+let anos = hoje.getFullYear() - inicioEmpresa.getFullYear();
+
+const aindaNaoCompletou =
+  hoje.getMonth() < inicioEmpresa.getMonth() ||
+  (hoje.getMonth() === inicioEmpresa.getMonth() &&
+    hoje.getDate() < inicioEmpresa.getDate());
+
+if (aindaNaoCompletou) {
+  anos--;
+}
+
+document.getElementById("anos-empresa").textContent = `${anos}+`;
