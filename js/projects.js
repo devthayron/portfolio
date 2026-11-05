@@ -6,6 +6,23 @@
     clear = $("fc");
 
   const projs = [...document.querySelectorAll("#stage .proj")];
+  const ordemProjetos = [
+    "Contador de Polichinelos",
+    "Detecção de Vagas em Estacionamentos",
+    "Organizador de Downloads",
+    "Agente de IA para WhatsApp",
+    "Automação de NF-e",
+  ];
+
+  const prioridade = new Map(
+    ordemProjetos.map((titulo, index) => [titulo, index]),
+  );
+
+  projs.sort(
+    (a, b) =>
+      (prioridade.get(a.dataset.title) ?? Infinity) -
+      (prioridade.get(b.dataset.title) ?? Infinity),
+  );
 
   const G = {
     area: {
