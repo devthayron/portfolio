@@ -28,7 +28,7 @@ jobs:
           playwright install --with-deps chromium
 
       - name: Gerar PDF
-        run: python scripts/gerar-pdf.py
+        run: python scripts/gerar_curriculo.py
 
       - name: Commitar o PDF, se mudou
         run: |
