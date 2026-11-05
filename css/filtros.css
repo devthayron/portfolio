@@ -69,7 +69,6 @@
   border-color: var(--ln);
 }
 
-/* Botão limpar filtros */
 .fclear {
   position: absolute;
   top: 14px;
@@ -99,7 +98,6 @@
   display: none;
 }
 
-/* Responsividade */
 @media (max-width: 640px) {
   .fbar {
     padding: 14px;

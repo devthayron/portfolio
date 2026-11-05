@@ -15,10 +15,8 @@ body {
   margin: 0;
   background: #e9eaf2;
   color: var(--texto);
-  font: 400 var(--tam) / 1.33 var(--fonte);
+  font: 400 var(--tam) / 1.39 var(--fonte);
 }
-
-/* BARRA DE AÇÕES */
 
 .barra {
   position: sticky;
@@ -49,8 +47,6 @@ body {
   color: var(--cor);
 }
 
-/* FOLHA */
-
 .folha {
   width: 210mm;
   min-height: 297mm;
@@ -59,8 +55,6 @@ body {
   background: #fff;
   box-shadow: 0 10px 40px -15px rgba(0, 0, 0, 0.35);
 }
-
-/* CABEÇALHO */
 
 .cabecalho {
   display: flex;
@@ -83,8 +77,6 @@ h1 {
   color: var(--cor);
 }
 
-/* CONTATO */
-
 .contato {
   text-align: left;
   font-size: 0.85rem;
@@ -104,8 +96,6 @@ h1 {
   font-weight: 700;
 }
 
-/* SEÇÕES */
-
 section {
   break-inside: auto;
 }
@@ -123,8 +113,6 @@ h2 {
 p {
   margin: 0 0 5px;
 }
-
-/* EXPERIÊNCIA E FORMAÇÃO */
 
 .item {
   margin-bottom: 8px;
@@ -158,8 +146,6 @@ li {
   margin-bottom: 2px;
 }
 
-/* HABILIDADES */
-
 .skills {
   display: grid;
   grid-template-columns: 110px 1fr;
@@ -175,13 +161,9 @@ li {
   margin: 0;
 }
 
-/* CERTIFICADOS */
-
 .certificados {
   margin-top: 4px;
 }
-
-/* PORTFÓLIO */
 
 .secao-portfolio {
   margin-top: 12px;
@@ -196,13 +178,9 @@ li {
   text-decoration: none;
 }
 
-/* LINKS */
-
 a {
   color: var(--cor);
 }
-
-/* RESPONSIVIDADE */
 
 @media screen and (max-width: 800px) {
   .folha {
@@ -254,8 +232,6 @@ a {
   }
 }
 
-/* IMPRESSÃO */
-
 @page {
   size: A4;
   margin: 0;
@@ -274,10 +250,16 @@ a {
     width: 210mm;
     min-height: 0;
     margin: 0;
-    padding: 9mm 14mm;
+    padding: 8mm 13mm;
     box-shadow: none;
   }
+  h2 {
+    margin: 8px 0 4px;
+  }
 
+  .item {
+    margin-bottom: 5px;
+  }
   a {
     color: var(--texto);
     text-decoration: none;
