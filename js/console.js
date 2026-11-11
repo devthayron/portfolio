@@ -15,6 +15,13 @@ const E = {
     '  "expected_completion": "out. 2027"',
     "}",
   ],
+  "/contact": [
+    "{",
+    '  "email": "[thayronsantos8@gmail.com](mailto:thayronsantos8@gmail.com)",',
+    '  "linkedin": "[linkedin.com/in/thayron-higlander](https://www.linkedin.com/in/thayron-higlander)",',
+    '  "github": "[github.com/devthayron](https://github.com/devthayron)"',
+    "}",
+  ],
   "/certificates": [
     "{",
     '  "ia": [',
@@ -29,13 +36,6 @@ const E = {
     '  "ferramentas": [',
     '    "[Git e GitHub](https://portal.hashtagtreinamentos.com/certificate/verify/git-thay17806594116764883e177)"',
     "  ]",
-    "}",
-  ],
-  "/contact": [
-    "{",
-    '  "email": "[thayronsantos8@gmail.com](mailto:thayronsantos8@gmail.com)",',
-    '  "linkedin": "[linkedin.com/in/thayron-higlander](https://www.linkedin.com/in/thayron-higlander)",',
-    '  "github": "[github.com/devthayron](https://github.com/devthayron)"',
     "}",
   ],
 };

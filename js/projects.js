@@ -7,6 +7,7 @@
 
   const projs = [...document.querySelectorAll("#stage .proj")];
   const ordemProjetos = [
+    "Assistente RAG Local",
     "Contador de Polichinelos",
     "Detecção de Vagas em Estacionamentos",
     "Organizador de Downloads",
